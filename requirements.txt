@@ -3,5 +3,5 @@ numpy
 streamlit
 requests
 bokeh
-tensorflow
+tensorflow==2.9.1
 scikit-learn
