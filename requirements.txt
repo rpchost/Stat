@@ -4,3 +4,4 @@ numpy
 requests
 bokeh
 tensorflow
+scikit-learn
