@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import requests
-from bokeh.plotting import figure  # Ensure this is imported
+from bokeh.plotting import figure
 from bokeh.models import HoverTool
 from bokeh.models.formatters import DatetimeTickFormatter
 from datetime import datetime
@@ -74,10 +74,6 @@ def forecast_prices_lstm(data, days_ahead):
 # Fetch real Bitcoin price data
 bitcoin_data = fetch_bitcoin_data(days=30)
 
-# Debugging: Print the fetched data
-#st.write("Bitcoin Data:")
-#st.write(bitcoin_data)
-
 # Check if bitcoin_data is empty or constant
 if bitcoin_data.empty or bitcoin_data['Price'].nunique() <= 1:
     st.error("Bitcoin data is empty or constant. Please check the data source.")
@@ -87,10 +83,6 @@ else:
 
     # Fit LSTM model and generate forecasted prices
     forecast_series, fitted_model = forecast_prices_lstm(bitcoin_data['Price'], days_ahead)
-
-    # Debugging: Print forecasted values
-    #st.write("Forecasted Prices:")
-    #st.write(forecast_series)
 
     # Check if forecast_series is empty
     if forecast_series.empty:
@@ -102,10 +94,6 @@ else:
             'Price': forecast_series.values
         })
         forecasted_data.set_index('Date', inplace=True)
-
-        # Debugging: Print forecasted dataset
-        #st.write("Forecasted Data:")
-        #st.write(forecasted_data)
 
         # Concatenate original data with forecasted data
         combined_data = pd.concat([bitcoin_data, forecasted_data])
@@ -129,7 +117,7 @@ else:
         p.add_tools(hover)
 
         # Format the x-axis to show all dates
-        p.xaxis.formatter = DatetimeTickFormatter(days=["%Y-%m-%d"])
+        p.xaxis.formatter = DatetimeTickFormatter(days="%Y-%m-%d")
 
         # Display the plot in Streamlit
         st.bokeh_chart(p)
