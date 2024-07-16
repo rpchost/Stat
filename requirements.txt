@@ -5,3 +5,4 @@ requests
 bokeh
 tensorflow
 scikit-learn
+cython
