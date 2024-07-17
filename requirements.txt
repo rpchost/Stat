@@ -5,6 +5,6 @@ pandas
 numpy
 requests
 bokeh
-tensorflow
+tensorflow==2.4.1
 scikit-learn
 cython
