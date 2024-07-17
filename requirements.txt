@@ -1,10 +1,10 @@
 # This is a package requirements file
 # List of required packages
-streamlit==1.2.0
+streamlit
 pandas
 numpy
 requests
 bokeh
-tensorflow==2.11.0
+tensorflow
 scikit-learn
 cython
