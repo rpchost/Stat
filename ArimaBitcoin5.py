@@ -8,4 +8,4 @@ from bokeh.models import HoverTool
 from bokeh.models.formatters import DatetimeTickFormatter
 from sklearn.preprocessing import MinMaxScaler
 
-import tensorflow as tf
+
