@@ -8,6 +8,8 @@ from bokeh.models import HoverTool
 from bokeh.models.formatters import DatetimeTickFormatter
 from sklearn.preprocessing import MinMaxScaler
 
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM
 
 # Function to fetch Bitcoin price data from CoinGecko API
 def fetch_bitcoin_data(days=30):
