@@ -1,6 +1,6 @@
 # This is a package requirements file
 # List of required packages
-streamlit
+streamlit==0.76.0
 pandas
 numpy
 requests
