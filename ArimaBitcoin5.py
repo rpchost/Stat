@@ -6,5 +6,6 @@ import numpy as np
 from bokeh.plotting import figure
 from bokeh.models import HoverTool
 from bokeh.models.formatters import DatetimeTickFormatter
+from sklearn.preprocessing import MinMaxScaler
 
 st.error("TEST")
